@@ -30,7 +30,9 @@
     "seed": "knex seed:run",
     "makeMigration": "knex migrate:make",
     "makeSeed": "knex seed:make",
-    "rollback":"knex migrate:rollback"
+    "rollback":"knex migrate:rollback",
+    "server-start": "node server.js",
+    "server-dev": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
