@@ -1,0 +1,62 @@
+
+{
+"favoriteList":
+    [
+        {
+            "userId": 1,
+            "title": "aiueo",
+            "artist": "ai",
+            "duration_ms": 23456,
+            "track_Image":
+            "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffull-count.jp%2F2022%2F11%2F20%2Fpost1309440%2F&psig=AOvVaw2pTCL-JwUjTl8b3eTVoyaG&ust=1669186649063000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCtg_yawfsCFQAAAAAdAAAAABAE",
+            "bpm": 345,
+            "main_key": "ド",
+            "date": "2022/11/22",
+            "location": "MLS",
+            "url": "http",
+            "comment": "test1"
+        },
+    {
+        "userId": 1,
+        "title": "abcdef",
+        "artist": "ia",
+        "duration_ms": 23456,
+        "track_Image":
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffull-count.jp%2F2022%2F11%2F20%2Fpost1309440%2F&psig=AOvVaw2pTCL-JwUjTl8b3eTVoyaG&ust=1669186649063000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCtg_yawfsCFQAAAAAdAAAAABAE",
+        "bpm": 345,
+        "main_key": "mi",
+        "date": "2022/11/22",
+        "location": "MLS",
+        "url": "http",
+        "comment": "test2"
+    },
+    {
+        "userId": 1,
+        "title": "eo",
+        "artist": "ai",
+        "duration_ms": 23456,
+        "track_Image":
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffull-count.jp%2F2022%2F11%2F20%2Fpost1309440%2F&psig=AOvVaw2pTCL-JwUjTl8b3eTVoyaG&ust=1669186649063000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCtg_yawfsCFQAAAAAdAAAAABAE",
+        "bpm": 345,
+        "main_key": "ド",
+        "date": "2022/11/22",
+        "location": "MLS",
+        "url": "http",
+        "comment": "test1"
+    },
+    {
+        "userId": 1,
+        "title": "abcdef",
+        "artist": "ia3333",
+        "duration_ms": 23456,
+        "track_Image":
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffull-count.jp%2F2022%2F11%2F20%2Fpost1309440%2F&psig=AOvVaw2pTCL-JwUjTl8b3eTVoyaG&ust=1669186649063000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCtg_yawfsCFQAAAAAdAAAAABAE",
+      "bpm": 345,
+      "main_key": "re",
+      "date": "2022/11/2",
+      "location": "MLS",
+      "url": "http",
+      "comment": "test2"
+    }
+]
+}
