@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm install && npm run migrate-latest && npm run seed-data",
+    "build": "npm install && npm run migrate && npm run seed",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "migrate": "knex migrate:latest",
