@@ -9,9 +9,9 @@ require('dotenv').config();
 module.exports = {
   client: 'postgresql',
     connection: {
-      database: process.env.POSTGRES_DB ,
-      user: process.env.POSTGRES_USER ,
-      password: process.env.PASSWORD
+      database: process.env.POSTGRES_DB || "music_diary" ,
+      user: process.env.POSTGRES_USER || "postgres" ,
+      password: process.env.PASSWORD|| null
     },
     migrations: {
       directory: "./db/migrations",
