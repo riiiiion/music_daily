@@ -1,5 +1,5 @@
 // Update with your config settings.
-// ddd
+// dd
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
