@@ -35,7 +35,6 @@
     "server-start": "node server.js",
     "server-dev": "nodemon server.js"
   },
-  "proxy": "http://localhost:4000",
   "eslintConfig": {
     "extends": [
       "react-app",
