@@ -6,7 +6,7 @@ import MusicInfo from "./component/MusicInfo";
 import axios, { AxiosResponse } from "axios";
 import {ServerData} from "./globals"
 
-
+//test
 function App() {
   // const [musicInfoFlag, setMusicInfoFlag] = useState<boolean>(false);
   const [musicArr, setMusicArr] = useState<ServerData[]>([]);
