@@ -4,7 +4,7 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 
-// require('dotenv').config();
+require('dotenv').config();
 
 module.exports = {
   client: 'postgresql',
