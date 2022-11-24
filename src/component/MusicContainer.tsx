@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import logo from "./logo.svg";
 import "../CSS/MusicContainer.css";
 import MusicInfo from "./MusicInfo";
@@ -13,10 +13,15 @@ interface Props {
 function MusicContainer({ musicArr, searchWord }: Props) {
   // debugger
   const [musicInfoFlag, setMusicInfoFlag] = useState<boolean>(false);
+  const [viewObj, setViewObj] = useState<ServerData>(musicArr[1]);
+  // cosnt[(viewObj, setViewObj)] = useState({});
 
   console.log(musicArr);
 
-  const showMusicInfo = () => {
+  const showMusicInfo= (e:any) => {
+    console.log(e);
+    // Number(e.target.key)
+    setViewObj(e);
     setMusicInfoFlag(true);
   };
   return (
@@ -34,7 +39,8 @@ function MusicContainer({ musicArr, searchWord }: Props) {
           })
 
           .map((elm, index) => (
-            <div key={index} onClick={showMusicInfo}>
+            // <div key={index}  >
+            <div key={index} onClick={()=>showMusicInfo(elm)} >
               <img src="./logo192.png" alt="default" width={70} />
 
               <span style={{ display: "inline-block" }}>
@@ -51,12 +57,17 @@ function MusicContainer({ musicArr, searchWord }: Props) {
           ))}
       </div>
       {musicInfoFlag ? (
-        <MusicInfo setMusicInfoFlag={setMusicInfoFlag} />
+        <MusicInfo setMusicInfoFlag={setMusicInfoFlag} viewObj={viewObj} />
       ) : (
         <></>
       )}
     </>
   );
 }
-
+// viewObj={viewObj}
 export default MusicContainer;
+// (property) React.DOMAttributes<HTMLDivElement>.onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
+// 型 '(e: MouseEventHandler<Element>) => void' を型 'MouseEventHandler<HTMLDivElement>' に割り当てることはできません。
+//   パラメーター 'e' および 'event' は型に互換性がありません。
+//     型 'MouseEvent<HTMLDivElement, MouseEvent>' を型 'MouseEventHandler<Element>' に割り当てることはできません。
+//       型 'MouseEvent<HTMLDivElement, MouseEvent>' にはシグネチャ '(event: MouseEvent<Element, MouseEvent>): void' に一致するものがありません。ts(2322)

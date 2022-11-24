@@ -35,7 +35,7 @@ function App() {
             </select>
             </div>
           </div>
-          <MainContainer musicArr={musicArr} />
+          <MainContainer musicArr={musicArr} setMusicArr={setMusicArr}/>
 </div>
 
     </>

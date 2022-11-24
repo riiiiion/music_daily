@@ -8,15 +8,16 @@ import API from "./API";
 
 import { getTokenFromUrl } from "../spotify/spotify";
 import { ServerData } from "../globals";
+import axios from "axios";
 
 interface Props {
   musicArr: ServerData[];
+  setMusicArr: Function 
 }
 
-function MainContainer({ musicArr }: Props) {
+function MainContainer({ musicArr, setMusicArr }: Props) {
   const [token, setToken] = useState<null | string>(null);
-  const [searchWord,setSearchWord]=useState<string>("");
-
+  const [searchWord, setSearchWord] = useState<string>("");
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -27,17 +28,18 @@ function MainContainer({ musicArr }: Props) {
     if (token) {
       console.log(token);
       setToken(token);
+      
     }
   }, []);
 
   return (
     <div className="main-container">
       <div className="main-container-head">
-        <SearchContainer setSearchWord={setSearchWord}/>
+        <SearchContainer setSearchWord={setSearchWord} setMusicArr={setMusicArr} token={token}/>
       </div>
-      <MusicContainer musicArr={musicArr} searchWord={searchWord}/>
+      <MusicContainer musicArr={musicArr} searchWord={searchWord} />
       {token ? <SpotifyLoggedIn /> : <SpotifyLogin />}
-      <API token={token} />
+      <API token={token} setToken={setToken}/>
     </div>
   );
 }

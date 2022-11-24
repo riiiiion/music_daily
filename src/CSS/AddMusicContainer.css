@@ -10,10 +10,14 @@
     justify-content: center
 }
 .add-music-container{
-    background-color: white;
+    
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center
 
+}
+.search-and-music-container{
+    background-color: white;
+    display: flex;
 }

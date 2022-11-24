@@ -4,8 +4,10 @@ import AddMusicContainer from "./AddMusicContainer";
 
 interface Props {
   setSearchWord: Function;
+  setMusicArr:Function;
+  token:null | string;
 }
-function SearchContainer({setSearchWord}:Props) {
+function SearchContainer({setSearchWord, setMusicArr, token}:Props) {
     const [AddMusicContainerFlag,setAddMusicContainerFlag]=useState<boolean>(false)
     // const [searchWord,setSearchWord]=useState<string>("")
     const showModal = () => {
@@ -25,7 +27,7 @@ const wordSet =(e:React.ChangeEvent<HTMLInputElement>)=>{
       <button className="add-music" onClick={showModal}>追加</button>
 
       {AddMusicContainerFlag?(
-        <AddMusicContainer setAddMusicContainerFlag={setAddMusicContainerFlag}/>
+        <AddMusicContainer setAddMusicContainerFlag={setAddMusicContainerFlag} setMusicArr={setMusicArr} token={token}/>
       ):
       <></>
       }

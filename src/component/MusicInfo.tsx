@@ -1,44 +1,44 @@
-import React from 'react';
+import React from "react";
 import "../CSS/MusicInfo.css";
+import { ServerData } from "../globals";
 
-interface Props{
-  setMusicInfoFlag:Function
+interface Props {
+  setMusicInfoFlag: Function;
+  viewObj: ServerData;
 }
-function MusicInfo({setMusicInfoFlag}:Props) {
-
-  const closeMusicInfo = ()=>{
-    setMusicInfoFlag((prev:boolean)=>!prev)
-  }
+function MusicInfo({ setMusicInfoFlag, viewObj }: Props) {
+  const closeMusicInfo = () => {
+    setMusicInfoFlag((prev: boolean) => !prev);
+  };
   return (
     <>
-    <div className='music-info-container-overlay'>
+      <div className="music-info-container-overlay">
+        <div className="music-info-container">
+          <div>
+            <img src="logo192.png" alt="default" />
+          </div>
+          <p>music</p>
+          <div>{viewObj.title}</div>
+          <p>artist</p>
+          <div>{viewObj.artist}</div>
+          <p>演奏日</p>
+          <div>{viewObj.date}</div>
+          <p>演奏場所</p>
+          <div>{viewObj.location}</div>
+          <p>楽曲情報</p>
 
-        <div className='music-info-container'>
-            <div>
-                <img src="logo192.png" alt="default" />
-            </div>
-            <p>music</p>
-            <div>{"music"}</div>
-            <p>artist</p>
-            <div>{"artist"}</div>
-            <p>演奏日</p>
-            <div>{}</div>
-            <p>演奏場所</p>
-            <div>{}</div>
-            <p>楽曲情報</p>
-            <div>{}</div>
-            <ul>
-                <li>BPM: {}</li>
-                <li>主キー: {}</li>
-                <li>曲の長さ: {}</li>
-            </ul>
-            <p>コメント</p>
-            <div>{}</div>
-            <button onClick={closeMusicInfo}>閉じる</button>
-        </div>    
-    </div>
+          <ul>
+            <li>BPM: {viewObj.bpm}</li>
+            <li>主キー: {viewObj.main_key}</li>
+            <li>曲の長さ: {viewObj.duration_ms}</li>
+          </ul>
+          <p>コメント</p>
+          <div>{viewObj.comment}</div>
+          <button onClick={closeMusicInfo}>閉じる</button>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
 export default MusicInfo;
