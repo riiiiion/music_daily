@@ -1,6 +1,5 @@
 // const { Knex } = require("knex");
 // const config = require("../../knexfile")
-const { generateKeySync } = require("crypto");
 const knex = require("../../knex");
 
 module.exports = {
@@ -65,5 +64,4 @@ module.exports = {
       return knex("mylist").insert(newMyList);
     }).catch(err => err);
   }
-
 }

@@ -1,7 +1,6 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-const musicTable = require("./src/getAPI/music.model");
 const musicModel = require("./src/getAPI/music.model");
 const knex = require("./knex");
 
@@ -15,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/music/:id", async(req, res) => {
-  const result = await musicTable.getAll(req.params.id);
+  const result = await musicModel.getAll(req.params.id);
   if(result.length === 0){
     res.status(404).end();
   }else {

@@ -3,12 +3,15 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+// require('dotenv').config();
+
 module.exports = {
   client: 'postgresql',
     connection: {
-      database: 'music_diary',
-      user:     'user',
-      password: 'password'
+      database: process.env.POSTGRES_DB ,
+      user: process.env.POSTGRES_USER ,
+      password: process.env.PASSWORD
     },
     migrations: {
       directory: "./db/migrations",
@@ -16,5 +19,4 @@ module.exports = {
     seeds: {
       directory: "./db/seeds",
     },
-
 };
