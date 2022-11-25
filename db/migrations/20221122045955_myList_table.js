@@ -7,7 +7,7 @@ exports.up = function(knex) {
   .createTable("mylist",function(table){
     table.integer("user_id").notNullable();
     table.foreign("user_id").references("users.id");
-    table.integer("music_id").notNullable();
+    table.string("music_id").notNullable();
     table.foreign("music_id").references("music.id");
     table.date("date");
     table.string("place");

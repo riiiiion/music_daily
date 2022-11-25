@@ -6,8 +6,9 @@ interface Props {
   setSearchWord: Function;
   setMusicArr:Function;
   token:null | string;
+  userId:number
 }
-function SearchContainer({setSearchWord, setMusicArr, token}:Props) {
+function SearchContainer({setSearchWord, setMusicArr, token,userId}:Props) {
     const [AddMusicContainerFlag,setAddMusicContainerFlag]=useState<boolean>(false)
     // const [searchWord,setSearchWord]=useState<string>("")
     const showModal = () => {
@@ -22,12 +23,11 @@ const wordSet =(e:React.ChangeEvent<HTMLInputElement>)=>{
     <>
       <span className="search-container">
         <input type="text" className="search-input" onChange={wordSet}></input>
-        <button className="search-submit" >検索実行</button>
       </span>
       <button className="add-music" onClick={showModal}>追加</button>
 
       {AddMusicContainerFlag?(
-        <AddMusicContainer setAddMusicContainerFlag={setAddMusicContainerFlag} setMusicArr={setMusicArr} token={token}/>
+        <AddMusicContainer setAddMusicContainerFlag={setAddMusicContainerFlag} setMusicArr={setMusicArr} token={token} userId={userId}/>
       ):
       <></>
       }

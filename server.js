@@ -26,7 +26,7 @@ app.post("/",async(req,res) => {
   // {
   //   "userId": "1",
   //     "title": "abcdefg",
-  //       "musicId": "13",
+  //       "musicId": "13",/
   //         "artist": "あいみょん",
   //           "duration_ms": "1",
   //             "track_image": null,
@@ -37,15 +37,17 @@ app.post("/",async(req,res) => {
   //                       "url": null,
   //                         "comment": "Good"
   // }
-
+  console.log(req.body);
   const retobj = await musicModel.postMyList(req.body);
   const retSele = await knex("mylist")
     .select("*")
     .where({"user_id": req.body.userId})
     .andWhere({"music_id": req.body.musicId});
   if (!retSele) {
+    console.log("error")
     res.status(400).end();
   } else {
+    console.log("good")
     res.status(200).end();
   }
 });

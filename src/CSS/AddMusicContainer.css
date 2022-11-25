@@ -1,23 +1,86 @@
-.add-music-container-overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center
+.add-music-container-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.add-music-container{
-    
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center
+.add-music-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.add-music-container > * {
+  
+  margin-top: 7px;
+  margin-bottom: 7px;
 
 }
-.search-and-music-container{
-    background-color: white;
-    display: flex;
+.search-and-music-container {
+  background-color: white;
+  display: flex;
+  height: 500px;
+  width: 650px;
 }
+
+.music-search-result {
+  border-left: 2px solid;
+  overflow: scroll;
+  width: 100%;
+
+}
+
+.music-search-item {
+  border-bottom: 2px solid;
+  background-color: white;
+  display: flex;
+}
+.music-search-item:hover {
+    background-color: #ffc9d7;
+  }
+
+.track-image{
+  height: 50px;
+  width: 50px;
+}
+.select-track-image{
+  height: 160px;
+  width: 160px;
+}
+
+
+.round_btn {
+  display: block;
+  position: absolute;
+  top: 18%;
+  left: 67%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #333; /* 枠の調整 */
+  border-radius: 50%;  /* 丸みの度合い */
+  background: #fff; /* ボタンの背景色 */
+}
+ 
+.round_btn::before, .round_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px; /* 棒の幅（太さ） */
+  height: 22px; /* 棒の高さ */
+  background: #333; /* バツ印の色 */
+}
+ 
+.round_btn::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+ 
+.round_btn::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+

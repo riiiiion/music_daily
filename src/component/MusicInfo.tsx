@@ -15,7 +15,7 @@ function MusicInfo({ setMusicInfoFlag, viewObj }: Props) {
       <div className="music-info-container-overlay">
         <div className="music-info-container">
           <div>
-            <img src="logo192.png" alt="default" />
+            <img src={viewObj.track_image===null?"logo192.png":viewObj.track_image} alt="default" className="info-image" />
           </div>
           <p>music</p>
           <div>{viewObj.title}</div>

@@ -41,7 +41,7 @@ module.exports = {
         img: obj.track_image,
         URL: obj.url
     }
-
+console.log(newMusic)
     return knex("music")
     .select()
     .where({

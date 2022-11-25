@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import SearchContainer from "./SearchContainer";
 import MusicContainer from "./MusicContainer";
-import SpotifyLogin from "./SpotifyLogin";
-import SpotifyLoggedIn from "./SpotifyLoggedIn";
 import API from "./API";
 
 import { getTokenFromUrl } from "../spotify/spotify";
@@ -12,10 +10,11 @@ import axios from "axios";
 
 interface Props {
   musicArr: ServerData[];
-  setMusicArr: Function 
+  setMusicArr: Function ;
+  userId:number;
 }
 
-function MainContainer({ musicArr, setMusicArr }: Props) {
+function MainContainer({ musicArr, setMusicArr ,userId }: Props) {
   const [token, setToken] = useState<null | string>(null);
   const [searchWord, setSearchWord] = useState<string>("");
 
@@ -34,12 +33,12 @@ function MainContainer({ musicArr, setMusicArr }: Props) {
 
   return (
     <div className="main-container">
+      <API token={token} setToken={setToken}/>
       <div className="main-container-head">
-        <SearchContainer setSearchWord={setSearchWord} setMusicArr={setMusicArr} token={token}/>
+        <SearchContainer setSearchWord={setSearchWord} setMusicArr={setMusicArr} token={token} userId={userId}/>
       </div>
       <MusicContainer musicArr={musicArr} searchWord={searchWord} />
-      {token ? <SpotifyLoggedIn /> : <SpotifyLogin />}
-      <API token={token} setToken={setToken}/>
+      
     </div>
   );
 }

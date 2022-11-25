@@ -5,12 +5,16 @@
 exports.up = function(knex) {
   return knex.schema
   .createTable("music",function(table){
-    table.increments("id").primary();
+    // table.increments("id").primary();
+    table.string("id").primary();
     table.string("Title").notNullable();
     table.string("Artist").notNullable();
-    table.integer("key");
-    table.integer("tempo");
-    table.integer("duration");
+    // table.integer("key");
+    // table.integer("tempo");
+    // table.integer("duration");
+    table.string("key");
+    table.string("tempo");
+    table.string("duration");
     table.string("img");
     table.string("URL");
   })

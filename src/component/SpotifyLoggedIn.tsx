@@ -3,7 +3,7 @@ import React from "react";
 function SpotifyLoggedIn() {
   return (
     <div>
-      <h1>spotifyへログインしました</h1>
+      <h2>spotifyへログインしました</h2>
     </div>
   );
 }

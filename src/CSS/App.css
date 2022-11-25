@@ -1,7 +1,15 @@
 .page-container {
+  background-color: rgb(90, 70, 46);
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* height: 100%; */
   /* justify-content: space-around; */
 }
 
@@ -9,4 +17,20 @@
   display: flex;
   align-content: flex-end;
 
+}
+
+/* 追加 */
+.title {
+  color: rgb(200, 114, 47);
+  font-size: 55px;
+  position: relative;
+  left: 100px;
+
+}
+
+h2 {
+  color: rgb(200, 114, 47);
+}
+a {
+  color:white;
 }

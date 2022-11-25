@@ -1,4 +1,6 @@
 import React from "react";
+import SpotifyLogin from "./SpotifyLogin";
+import SpotifyLoggedIn from "./SpotifyLoggedIn";
 import axios, { AxiosResponse } from "axios";
 
 interface Props {
@@ -9,8 +11,6 @@ const clientId = "c6024a4d60b647c7a72a9b91396b6b43";
 const clientSecret = process.env.REACT_APP_SECRET_KEY;
 function API({ token, setToken }: Props) {
   const APIfn = () => {
-   
-
     axios
       .post(
         "https://accounts.spotify.com/api/token",
@@ -18,7 +18,6 @@ function API({ token, setToken }: Props) {
           grant_type: "client_credentials",
           code: token,
           redirect_uri: "http://localhost:3000",
-        
         },
         {
           headers: {
@@ -32,27 +31,11 @@ function API({ token, setToken }: Props) {
         setToken(res.data.access_token);
       });
   };
-  //Lisaのほむらを取得する関数
-  const APIfn2 = () => {
-    axios(`https://api.spotify.com/v1/search`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params: {
-        q: "%E7%B4%85%E8%93%AE%E8%8F%AF",
-        type: "track",
-        limit: 10,
-      },
-    }).then((res: AxiosResponse) => {
-      console.log(res);
-    });
-  };
 
   return (
     <div className="Login">
-      <button onClick={APIfn}>楽曲取得</button>
-      <button onClick={APIfn2}>LISA</button>
+      {token ? <SpotifyLoggedIn /> : <SpotifyLogin />}
+      <button onClick={APIfn}>トークン取得</button>
     </div>
   );
 }

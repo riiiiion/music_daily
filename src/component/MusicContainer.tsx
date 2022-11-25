@@ -8,19 +8,17 @@ import { ServerData } from "../globals";
 interface Props {
   musicArr: ServerData[];
   searchWord: string;
+ 
 }
 
-function MusicContainer({ musicArr, searchWord }: Props) {
-  // debugger
+function MusicContainer({ musicArr, searchWord}: Props) {
   const [musicInfoFlag, setMusicInfoFlag] = useState<boolean>(false);
   const [viewObj, setViewObj] = useState<ServerData>(musicArr[1]);
-  // cosnt[(viewObj, setViewObj)] = useState({});
 
   console.log(musicArr);
 
   const showMusicInfo= (e:any) => {
     console.log(e);
-    // Number(e.target.key)
     setViewObj(e);
     setMusicInfoFlag(true);
   };
@@ -39,18 +37,17 @@ function MusicContainer({ musicArr, searchWord }: Props) {
           })
 
           .map((elm, index) => (
-            // <div key={index}  >
-            <div key={index} onClick={()=>showMusicInfo(elm)} >
-              <img src="./logo192.png" alt="default" width={70} />
+            <div key={index} onClick={()=>showMusicInfo(elm)} className="music-list-item" >
+              <img src={elm.track_image? elm.track_image:"./logo192.png"} alt="default" width={70} />
 
               <span style={{ display: "inline-block" }}>
                 <div>
-                  <div>music</div>
-                  <div>{elm.title}</div>
+                  {/* <div>music</div> */}
+                  <div className="music-title">{elm.title}</div>
                 </div>
                 <div>
-                  <div>artist</div>
-                  <div>{elm.artist}</div>
+                  {/* <div>artist</div> */}
+                  <div className="music-artist">{elm.artist}</div>
                 </div>
               </span>
             </div>
@@ -64,10 +61,4 @@ function MusicContainer({ musicArr, searchWord }: Props) {
     </>
   );
 }
-// viewObj={viewObj}
 export default MusicContainer;
-// (property) React.DOMAttributes<HTMLDivElement>.onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
-// 型 '(e: MouseEventHandler<Element>) => void' を型 'MouseEventHandler<HTMLDivElement>' に割り当てることはできません。
-//   パラメーター 'e' および 'event' は型に互換性がありません。
-//     型 'MouseEvent<HTMLDivElement, MouseEvent>' を型 'MouseEventHandler<Element>' に割り当てることはできません。
-//       型 'MouseEvent<HTMLDivElement, MouseEvent>' にはシグネチャ '(event: MouseEvent<Element, MouseEvent>): void' に一致するものがありません。ts(2322)

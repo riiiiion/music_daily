@@ -13,7 +13,7 @@ export interface ServerData {
     title: string;
     artist: string;
     duration_ms: number | null;
-    track_Image: string | null;
+    track_image: string | null;
     bpm: number | null;
     main_key: string | null;
     date: string | null;
