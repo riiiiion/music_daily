@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm install && npm run rollback && npm run migrate && npm run seed1 && npm run seed2 && npm run seed3 && npm run clientBuild",
+    "build": "npm install  && npm run migrate && npm run seed1 && npm run seed2 && npm run seed3 && npm run clientBuild",
     "clientBuild": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
