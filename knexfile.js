@@ -33,15 +33,26 @@ module.exports = {
 //     },
 //     seeds: { directory: "./db/seeds" },
   // },
-  production: {
-    client: "pg",
-    connection: process.env.DATABASE_URL,
+  client: "pg",
+    connection:process.env.DATABASE_URL,
     ssl: {
-      rejectUnauthorized: false,
-    },
-    migrations: {
-      directory: "./db/migrations",
-    },
-    seeds: { directory: "./db/seeds" },
-  },
-};
+          rejectUnauthorized: false,
+        },
+        migrations: {
+          directory: "./db/migrations",
+        },
+        seeds: { directory: "./db/seeds" },
+      
+  }
+  // production: {
+  //   client: "pg",
+  //   connection: process.env.DATABASE_URL,
+  //   ssl: {
+  //     rejectUnauthorized: false,
+  //   },
+  //   migrations: {
+  //     directory: "./db/migrations",
+  //   },
+  //   seeds: { directory: "./db/seeds" },
+  // },
+// };
