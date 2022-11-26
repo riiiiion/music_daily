@@ -1,6 +1,7 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
-const redirectUri = "http://localhost:3000";
+// const redirectUri = "http://localhost:3000";
+const redirectUri = "https://music-dialy.onrender.com/";
 const clientId = "c6024a4d60b647c7a72a9b91396b6b43";
 
 // 対応する範囲を決める
