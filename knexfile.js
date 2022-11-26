@@ -22,16 +22,16 @@ module.exports = {
 //     },
 
 // }
-client: "pg",
-    connection: {
-      user: process.env.POSTGRES_USER ||"postgres",
-      database: process.env.POSTGRES_DB||"music_diary",
-      password: process.env.PASSWORD,
-    },
-    migrations: {
-      directory: "./db/migrations",
-    },
-    seeds: { directory: "./db/seeds" },
+// client: "pg",
+//     connection: {
+//       user: process.env.POSTGRES_USER ||"postgres",
+//       database: process.env.POSTGRES_DB||"music_diary",
+//       password: process.env.PASSWORD,
+//     },
+//     migrations: {
+//       directory: "./db/migrations",
+//     },
+//     seeds: { directory: "./db/seeds" },
   // },
   production: {
     client: "pg",
