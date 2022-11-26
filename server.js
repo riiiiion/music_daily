@@ -9,9 +9,6 @@ app.use(express.json());
 
 const port = process.env.PORT || 4000;
 
-app.get("/", (req, res) => {
-    res.send("Hello, Top page!");
-});
 
 app.get("/music/:id", async(req, res) => {
   const result = await musicModel.getAll(req.params.id);
@@ -20,6 +17,13 @@ app.get("/music/:id", async(req, res) => {
   }else {
     res.json(result).status(200).end();
   }
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname,'/build/index.html'));
+});
+app.get("/", (req, res) => {
+    res.send("Hello, Top page!");
 });
 
 app.post("/",async(req,res) => {
@@ -37,7 +41,7 @@ app.post("/",async(req,res) => {
   //                       "url": null,
   //                         "comment": "Good"
   // }
-  console.log(req.body);
+  // console.log(req.body);
   const retobj = await musicModel.postMyList(req.body);
   const retSele = await knex("mylist")
     .select("*")
