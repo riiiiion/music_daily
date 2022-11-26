@@ -2,7 +2,7 @@
   "name": "music_daily",
   "version": "0.1.0",
   "private": true,
-  "homepage":"./",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm install  && npx knex migrate:latest --knexfile ./knexfile.js && npm run seed1 && npm run seed2 && npm run seed3 && npm run clientBuild",
+    "build": "npm install && npm run rollback  && npx knex migrate:latest --knexfile ./knexfile.js && npm run seed1 && npm run seed2 && npm run seed3 && npm run clientBuild",
     "clientBuild": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -40,7 +40,7 @@
     "rollback": "knex migrate:rollback",
     "server-start": "node server.js",
     "server-dev": "nodemon server.js",
-    "dev" :"concurrently \"npm run server-dev\" \"npm run start\" "
+    "dev": "concurrently \"npm run server-dev\" \"npm run start\" "
   },
   "proxy": "http://localhost:4000",
   "eslintConfig": {
